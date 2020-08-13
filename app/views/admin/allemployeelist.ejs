@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Employee List</title>
+</head>
+<body>
+		<form method="post">
+			<fieldset>
+				<legend>All Employee List</legend>
+			<table id="table" border="1">
+		<tr>
+			<th>id</th>
+			<th>employee name</th>
+			<th>phone</th>		
+			<th>operations</th>
+		
+		</tr>
+      <% for(var i=0; i < results.length; i++){ %>
+		
+		<tr>
+			<td><%= results[i].id %></td>
+			<td><%= results[i].username %></td>
+			<td><%= results[i].phone %></td>
+			
+			<td><a href="/admin/update/<%= results[i].id %>">Edit</a> | <a href="/admin/delete/<%= results[i].id %>"> Delete </a></td>
+		</tr>
+		<% } %>
+	</table>
+
+	
+	<br/>
+	
+	<a href="/admin">Back</a>
+			</fieldset>
+		</form>
+</body>
+</html>

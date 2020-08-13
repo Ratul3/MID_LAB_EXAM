@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Employee</title>
+	<script type="text/javascript">
+function valid()
+{
+var ename = document.forms["myform"]["ename"].value;
+if(ename==""){
+	alert("Name Can't Be Empty");
+return false;
+
+}
+
+if(ename.length<8){
+	alert("Name Can't Be Less Than 8 Characters");
+return false;
+
+}
+
+var epassword = document.forms["myform"]["epassword"].value;
+if(epassword==""){
+	alert("Password Can't Be Empty");
+return false;
+
+}
+
+if(epassword.length<8){
+	alert("Password Can't Be Less Than 8 Characters");
+return false;
+
+}
+var ephone = document.forms["myform"]["ephone"].value;
+if(ephone==""){
+	alert("Phone Can't Be Empty");
+return false;
+
+}
+
+if(ephone.length<11){
+	alert("Phone Can't Be Less Than 11 Numbers");
+return false;
+
+}
+
+if(ephone.length>11){
+	alert("Phone Can't Be Greater Than 11 Numbers");
+return false;
+
+}
+
+
+}
+</script>
+</head>
+<body>
+		<form name="myform" onsubmit="return valid()" method="post">
+			<fieldset>
+				<legend>Add Employee</legend>
+				<table>
+					<tr>
+						<td>EmpName</td>
+						<td><input type="text" name="ename"></td>
+					</tr>
+					<tr>
+					<tr>
+						<td>EmpPassword</td>
+						<td><input type="password" name="epassword"></td>
+					</tr>
+					<tr>
+						<td>Phone</td>
+						<td><input type="text" name="ephone"></td>
+					</tr>
+					
+						<td><input type="submit" name="submit" value="AddEmployee"></td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+</body>
+</html>
