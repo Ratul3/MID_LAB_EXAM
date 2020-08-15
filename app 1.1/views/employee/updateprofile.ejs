@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Profile</title>
+	<script type="text/javascript">
+function valid()
+{
+var name = document.forms["myform"]["username"].value;
+
+
+
+if(name==""){
+	alert("Username Can't Be Empty");
+return false;
+
+}
+
+
+
+if(name.length<8){
+	alert("Username Can;t Be Less Than 8 Character");
+return false;
+
+}
+
+
+
+var password = document.forms["myform"]["password"].value;
+
+if(password==""){
+	alert("Password Can't Be Empty");
+return false;
+
+}
+
+if(password.length<8){
+	alert("Password Can't Be Less Than 8 Characters or Digits");
+return false;
+
+}
+
+
+
+
+
+var phone = document.forms["myform"]["phone"].value;
+if(phone==""){
+	alert("Phone Can't Be Empty");
+return false;
+
+}
+
+
+var file = document.forms["myform"]["file"].value;
+
+if(file==""){
+	alert("Profile Picture Can't Be Empty");
+return false;
+
+}
+
+
+}
+</script>
+	<div>
+		<h1>Update Profile</h1> 		
+	</div>
+
+	
+
+	<form name="myform" onsubmit="return valid()" method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>Id</td>
+				<td><input type="text" readonly name="id" value="<%=user.id%>"></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" value="<%=user.username%>"></td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><input type="text" name="password" value="<%=user.password%>"></td>
+			</tr>
+			<tr>
+			<tr>
+				<td>Phone :</td>
+				<td><input type="text" name="phone" value="<%=user.phone%>"></td>
+			</tr>
+			<tr>
+				<td>Picture :</td>
+	<td><input type="file" name="file" accept=""/></td>
+	</tr>
+	<tr>
+				<td><input type="submit" name="submit" value="Update"></td>
+				<td><a href="/employee">Back</a></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
